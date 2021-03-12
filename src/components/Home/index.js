@@ -59,6 +59,7 @@ const Paises = styled.div`
 
       min-height: 105px;
       display: flex;
+      justify-content: center;
 
       img {  
         max-height: fit-content;
@@ -67,6 +68,7 @@ const Paises = styled.div`
         border-radius: 5px;
         border-bottom-left-radius: 0;
         border-bottom-right-radius: 0;
+       
       }
 
     }
@@ -124,7 +126,12 @@ function  Home () {
 
         <Filters>
             <div className="item">
-                <input type="search" name="country" onChange={event => setPais(event.target.value)}  />
+                <input type="search" name="country" onChange={event => {
+                    if(event.target.value.trim() === ''){
+                      return;
+                    }
+                    setPais(event.target.value)
+                  }}  />
             </div>
             <div className="item">
                 <select name="region" onChange = { event => setRegiao(event.target.value)}>
@@ -162,8 +169,9 @@ function  Home () {
         }
         {paises.length === 0 && <div className="item">
             <div className="item-body">
-              <h3>Error 404!</h3>
-              <p>Country not found!</p>
+              <h3>Info</h3>
+              <p>No country found</p>
+              <Link to="/">Back</Link>
             </div>
           </div>}
         </Paises>

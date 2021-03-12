@@ -13,7 +13,7 @@ function Details() {
         <Wrapper>
             <Header />
             <Link to="/">
-                Voltar
+                Back
             </Link>
             <h1>{name}</h1>
         </Wrapper>
