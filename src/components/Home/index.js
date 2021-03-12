@@ -76,13 +76,18 @@ function  Home () {
 
     const [paises, setPaises] = useState([])
     const [regiao, setRegiao] = useState('Americas')
-    const [pais, setPais] = useState('Brazil')
+    const [pais, setPais] = useState('')
 
     useEffect(() => {
 
       const getPaises = async () => {
         await fetch(`${URL_API}/region/${regiao}`)
-          .then(response => response.json())
+          .then(response => {
+            if(response.status === 404){
+                return []
+            }
+            return response.json()
+          })
           .then(json => {
             setPaises(json)
           })
@@ -96,7 +101,12 @@ function  Home () {
 
       const getPais = async () => {
         await fetch(`${URL_API}/name/${pais}`)
-          .then(response => response.json())
+          .then(response => {
+            if(response.status === 404){
+              return []
+            }
+            return response.json()
+          })
           .then(json => {
             setPaises(json)
           })
@@ -150,6 +160,12 @@ function  Home () {
                 )
             })
         }
+        {paises.length === 0 && <div className="item">
+            <div className="item-body">
+              <h3>Error 404!</h3>
+              <p>Country not found!</p>
+            </div>
+          </div>}
         </Paises>
 
     </Wrapper>
