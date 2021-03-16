@@ -3,10 +3,7 @@ import styled from 'styled-components'
 import Header from '../Header'
 import { Wrapper } from '../Wrapper'
 import {Link} from 'react-router-dom'
-
-const URL_API = 'https://restcountries.eu/rest/v2'
-
-const REGIONS = ['Africa', 'Americas', 'Asia', 'Europe', 'Oceania']
+import { REGIONS, URL_API } from '../../consts'
 
 
 

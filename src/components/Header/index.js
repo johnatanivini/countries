@@ -1,5 +1,8 @@
 import styled from 'styled-components'
 
+import {faMoon} from '@fortawesome/free-solid-svg-icons'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+
 const HeaderWrapper = styled.header`
 
     display:flex;
@@ -28,7 +31,9 @@ function Header() {
                 <h1>Where in the world?</h1>
             </div>
             <div>
-                <span>Dark Mode</span>
+                <span>
+                    <FontAwesomeIcon icon={faMoon} style={{color:''}} /> Mode
+                </span>
             </div>
         </HeaderWrapper>
     )
