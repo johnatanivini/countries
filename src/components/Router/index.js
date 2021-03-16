@@ -1,6 +1,7 @@
 import React from 'react'
 import  {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
 import Details from '../Details'
+import Alpha from '../Details/Alpha'
 import Home from '../Home'
 
 
@@ -14,7 +15,8 @@ function RouterApp({location}) {
                 <Route exact path="/">
                     <Home />
                 </Route>
-                <Route path="/:name" children={<Details />} />
+                <Route path="/country/:name" children={<Details />} />
+                <Route path="/alpha/:alpha" children={<Alpha />} />
             </Switch>
 
         </Router>

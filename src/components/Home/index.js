@@ -151,7 +151,7 @@ function  Home () {
                 return (
                 <div className="item" key={index}>
 
-                    <Link to={`/${country.name}`} className="img">
+                    <Link to={`/country/${country.name}`} className="img">
                       <img src={country.flag} alt={country.region}/>
                     </Link>
                     <div className="item-body">

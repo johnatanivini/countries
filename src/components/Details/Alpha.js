@@ -5,16 +5,16 @@ import { useEffect, useState } from "react";
 import { URL_API } from "../../consts";
 import DetailCountry from "./DetailCountry";
 
-function Details() {
+function Alpha() {
 
-    const {name} = useParams()
+    const {alpha} = useParams()
 
     const [detail, setDetail] = useState({})
 
-    useEffect(() => {
+      useEffect(() => {
         
-        const getPais = async () => {
-          await fetch(`${URL_API}/name/${name}`)
+        const getAlpha = async () => {
+          await fetch(`${URL_API}/alpha/${alpha}`)
             .then(response => {
               if(response.status === 404){
                 return []
@@ -22,18 +22,18 @@ function Details() {
               return response.json()
             })
             .then(json => {
-              setDetail(json[0])
+              setDetail(json)
             })
         }
   
-        getPais()
+        getAlpha()
   
-      },[name])
+      },[alpha])
 
     return (
        <DetailCountry detail={detail} />
     )
 }
 
-export default Details
+export default Alpha
 
