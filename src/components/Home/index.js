@@ -52,11 +52,12 @@ const Paises = styled.div`
     .item {
       flex:1;
       flex-basis: 22%;
-      border: solid 1px #ebebeb;
-      box-shadow: 0 0 4px #ccc;
+      background: ${({theme}) => theme.backgroundElements };
+      box-shadow: 0 0 5px ${({theme}) => theme.colorShadow };
       overflow:hidden;
       border-radius: 5px;
       align-self:stretch;
+      transition: background .5s linear;
 
       .item-body {
         padding: 10px;
