@@ -1,4 +1,4 @@
-import Header from "../Header"
+
 import { Wrapper } from "../Wrapper"
 import {
     Link
@@ -72,8 +72,6 @@ function DetailCountry ({detail}) {
     
     return (
         <Wrapper>
-
-        <Header />
 
         <Link className="button" to="/">
             Back
