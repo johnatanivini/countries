@@ -14,8 +14,8 @@ const Filters = styled.div`
     flex-flow: row wrap;
     justify-content: space-evenly;
     align-items: center;
-    margin-bottom:25px;
-    padding:20px 0;
+    margin: 20px 0;
+    padding: 20px 0;
 
     .item {
       flex: 1;
@@ -39,6 +39,19 @@ const Filters = styled.div`
       }
 
     }
+
+    @media (max-width: 980px){
+       flex-flow: column wrap;
+
+      .item{
+        width: 100%;
+      }
+
+      .item input, .item select {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+    }
     
 
 `
@@ -47,18 +60,18 @@ const Paises = styled.div`
     flex-flow: row wrap;
     justify-content: space-evenly;
     align-items: flex-start;
-    gap: 25px;
+    gap: 60px;
 
     .item {
       flex:1;
-      flex-basis: 22%;
+      flex-basis: 150px;
       background: ${({theme}) => theme.backgroundElements };
       box-shadow: 0 0 5px ${({theme}) => theme.colorShadow };
       overflow:hidden;
       border-radius: 5px;
       align-self:stretch;
       transition: background .5s linear;
-
+      
       .item-body {
         padding: 10px;
 
